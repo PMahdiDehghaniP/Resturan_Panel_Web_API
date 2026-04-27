@@ -64,11 +64,11 @@ type RedisConfig struct {
 func getConfigPath(appType string) string {
 	switch appType {
 	case "dev":
-		return "dev_config.yaml"
+		return "config_dev.yml"
 	case "production":
-		return "production_config.yaml"
+		return "config_production.yml"
 	case "docker":
-		return "docker_config.yaml"
+		return "config_docker.yml"
 	default:
 		return ""
 	}
