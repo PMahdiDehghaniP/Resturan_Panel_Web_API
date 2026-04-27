@@ -1,0 +1,46 @@
+version : '3.7'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: restaurant_db
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    networks:
+      - webapi_network
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+  pgadmin:
+    image: pgadmin4
+    container_name: pgadmin_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: Mahdi14dehghani@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: 12345678
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    networks:
+      - webapi_network
+    ports:
+      - "8000:80"
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
+
+
+
+volumes:
+  postgres:
+  pgadmin:
+  logs:
+
+networks:
+  webapi_network:
+    driver: bridge
