@@ -20,14 +20,14 @@ type Config struct {
 	Server   ServerConfig
 	Postgres PostgresConfig
 	Redis    RedisConfig
-	Logger   LoggerConfing
+	Logger   LoggerConfig
 }
 
 type ServerConfig struct {
 	Port    string
 	RunMode string
 }
-type LoggerConfing struct {
+type LoggerConfig struct {
 	FilePath   string
 	Encoding   string
 	Level      string
@@ -43,6 +43,7 @@ type PostgresConfig struct {
 	MaxIdleConnections    int
 	MaxOpenConnections    int
 	MaxLifetimeConnection time.Duration
+	MaxIdleTimeConnection time.Duration
 }
 
 type RedisConfig struct {
