@@ -1,4 +1,4 @@
-package logger
+package logging
 
 type Category string
 type SubCategory string
@@ -15,6 +15,8 @@ const (
 
 const (
 	StartUp         SubCategory = "StartUp"
+	Get             SubCategory = "Get"
+	Shutdown        SubCategory = "Shutdown"
 	ExternalService SubCategory = "ExternalService"
 
 	Select   SubCategory = "Select"

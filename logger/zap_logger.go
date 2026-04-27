@@ -1,4 +1,4 @@
-package logger
+package logging
 
 import (
 	"github.com/PMahdiDehghaniP/Resturan_Panel_Web_API/config"

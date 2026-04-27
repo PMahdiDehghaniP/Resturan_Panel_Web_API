@@ -1,4 +1,4 @@
-package logger
+package logging
 
 func mapToZapParams(extraKey map[ExtraKey]interface{}) []interface{} {
 	params := make([]interface{}, 0)
