@@ -3,6 +3,7 @@ package api
 import (
 	"fmt"
 
+	"github.com/PMahdiDehghaniP/Resturan_Panel_Web_API/api/routes"
 	"github.com/PMahdiDehghaniP/Resturan_Panel_Web_API/config"
 	logging "github.com/PMahdiDehghaniP/Resturan_Panel_Web_API/logger"
 	"github.com/gin-gonic/gin"
@@ -17,6 +18,7 @@ func InitApiServer() {
 	serverPort := cfg.Server.Port
 	r := gin.New()
 	r.Use(gin.Logger(), gin.Recovery())
+	routes.RegisterApiRoutes(r)
 	logger.Info(logging.General, logging.Api,
 		fmt.Sprintf("Api Server Is Listening To Port:%s", serverPort), nil)
 	err := r.Run(fmt.Sprintf(":%s", serverPort))
