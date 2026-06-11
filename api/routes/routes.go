@@ -7,5 +7,6 @@ func RegisterApiRoutes(router *gin.Engine) {
 	v1 := api.Group("/v1")
 	{
 		registerCustomerRoutes(v1)
+		registerFoodRoutes(v1)
 	}
 }
