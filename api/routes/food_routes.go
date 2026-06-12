@@ -8,4 +8,5 @@ import (
 func registerFoodRoutes(routerGroup *gin.RouterGroup) {
 	foodsRouterGroup := routerGroup.Group("/foods")
 	foodsRouterGroup.GET("/getfoods", foods.GetAllFoods)
+	foodsRouterGroup.POST("/createfood", foods.HandleCreateFood)
 }
